@@ -1,0 +1,40 @@
+import { IProduct } from '@/types/product';
+
+export const products: IProduct[] = [
+  {
+    name: 'VKEA Lounge Chair',
+    slug: 'vkea-lounge-chair',
+    description: 'Kursi santai dengan desain sederhana untuk ruang keluarga.',
+    excerpt: 'Kursi santai minimalis untuk ruang keluarga.',
+    price: 1299000,
+    tags: ['chair', 'living room', 'wood'],
+    thumbnail: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7',
+    images: ['https://images.unsplash.com/photo-1586023492125-27b2c045efd7'],
+    createdAt: '2026-04-14T00:00:00.000Z',
+    updatedAt: '2026-04-14T00:00:00.000Z',
+  },
+  {
+    name: 'VKEA Study Desk',
+    slug: 'vkea-study-desk',
+    description: 'Meja belajar ringkas untuk kamar dan area kerja kecil.',
+    excerpt: 'Meja belajar ringkas untuk area kerja kecil.',
+    price: 899000,
+    tags: ['desk', 'workspace', 'minimal'],
+    thumbnail: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd',
+    images: ['https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd'],
+    createdAt: '2026-04-14T00:00:00.000Z',
+    updatedAt: '2026-04-14T00:00:00.000Z',
+  },
+  {
+    name: 'VKEA Storage Cabinet',
+    slug: 'vkea-storage-cabinet',
+    description: 'Kabinet penyimpanan untuk membuat ruangan tetap rapi.',
+    excerpt: 'Kabinet penyimpanan untuk ruangan rapi.',
+    price: 1599000,
+    tags: ['cabinet', 'storage', 'home'],
+    thumbnail: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe',
+    images: ['https://images.unsplash.com/photo-1594026112284-02bb6f3352fe'],
+    createdAt: '2026-04-14T00:00:00.000Z',
+    updatedAt: '2026-04-14T00:00:00.000Z',
+  },
+];
