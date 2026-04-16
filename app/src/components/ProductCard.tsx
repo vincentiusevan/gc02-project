@@ -4,10 +4,11 @@ import { IProduct } from '@/types/product';
 
 interface IProps {
   product: IProduct;
+  showRemoveButton?: boolean;
 }
 
 export default function ProductCard(props: IProps) {
-  const { product } = props;
+  const { product, showRemoveButton } = props;
 
   return (
     <div className="border p-4">
@@ -26,6 +27,15 @@ export default function ProductCard(props: IProps) {
       <Link href={`/products/${product.slug}`} className="mt-4 inline-block underline">
         Detail
       </Link>
+      {showRemoveButton ? (
+        <button className="mt-3 block w-full bg-red-600 px-4 py-2 font-semibold text-white">
+          Remove Wishlist
+        </button>
+      ) : (
+        <button className="mt-3 block w-full bg-blue-700 px-4 py-2 font-semibold text-white">
+          Add to Wishlist
+        </button>
+      )}
     </div>
   );
 }

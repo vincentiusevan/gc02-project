@@ -11,7 +11,7 @@ export default function WishlistPage() {
 
       <div className="mt-6 grid grid-cols-3 gap-6">
         {wishlistProducts.map((product) => {
-          return <ProductCard key={product.slug} product={product} />;
+          return <ProductCard key={product.slug} product={product} showRemoveButton />;
         })}
       </div>
     </div>
