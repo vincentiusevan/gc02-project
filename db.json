@@ -121,6 +121,126 @@
       "images": ["https://images.unsplash.com/photo-1532372320572-cda25653a694"],
       "createdAt": "2026-04-17T00:00:00.000Z",
       "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Nightstand",
+      "slug": "vkea-nightstand",
+      "description": "Meja samping tempat tidur dengan laci kecil untuk menyimpan buku, charger, dan barang pribadi. Ukurannya ringkas untuk kamar minimalis.",
+      "excerpt": "Meja samping tempat tidur dengan laci kecil.",
+      "price": 549000,
+      "tags": ["nightstand", "bedroom", "storage"],
+      "thumbnail": "https://images.unsplash.com/photo-1616627561950-9f746e330187",
+      "images": ["https://images.unsplash.com/photo-1616627561950-9f746e330187"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA TV Bench",
+      "slug": "vkea-tv-bench",
+      "description": "Meja TV rendah dengan ruang penyimpanan untuk konsol, remote, dan dekorasi. Desainnya bersih agar ruang keluarga terlihat rapi.",
+      "excerpt": "Meja TV rendah dengan ruang penyimpanan.",
+      "price": 1199000,
+      "tags": ["tv bench", "living room", "storage"],
+      "thumbnail": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
+      "images": ["https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Dining Chair",
+      "slug": "vkea-dining-chair",
+      "description": "Kursi makan ringan dengan bentuk sederhana dan sandaran nyaman. Mudah dipadukan dengan meja makan kayu atau meja putih.",
+      "excerpt": "Kursi makan ringan dengan sandaran nyaman.",
+      "price": 399000,
+      "tags": ["chair", "dining room", "minimal"],
+      "thumbnail": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c",
+      "images": ["https://images.unsplash.com/photo-1567538096630-e0c55bd6374c"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Drawer Unit",
+      "slug": "vkea-drawer-unit",
+      "description": "Unit laci serbaguna untuk dokumen, alat tulis, dan perlengkapan kerja. Cocok ditempatkan di bawah meja belajar atau meja kerja.",
+      "excerpt": "Unit laci serbaguna untuk ruang kerja.",
+      "price": 849000,
+      "tags": ["drawer", "workspace", "storage"],
+      "thumbnail": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92",
+      "images": ["https://images.unsplash.com/photo-1583847268964-b28dc8f51f92"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Wall Shelf",
+      "slug": "vkea-wall-shelf",
+      "description": "Rak dinding sederhana untuk menaruh dekorasi, buku kecil, atau tanaman. Membantu memaksimalkan ruang vertikal di rumah.",
+      "excerpt": "Rak dinding sederhana untuk dekorasi.",
+      "price": 299000,
+      "tags": ["shelf", "wall", "decor"],
+      "thumbnail": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
+      "images": ["https://images.unsplash.com/photo-1519710164239-da123dc03ef4"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Office Chair",
+      "slug": "vkea-office-chair",
+      "description": "Kursi kerja dengan bantalan nyaman untuk aktivitas belajar dan bekerja dari rumah. Tingginya dapat disesuaikan dengan meja kerja.",
+      "excerpt": "Kursi kerja nyaman untuk belajar dan bekerja.",
+      "price": 1399000,
+      "tags": ["chair", "office", "workspace"],
+      "thumbnail": "https://images.unsplash.com/photo-1505797149-43b0069ec26b",
+      "images": ["https://images.unsplash.com/photo-1505797149-43b0069ec26b"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Rug",
+      "slug": "vkea-rug",
+      "description": "Karpet lembut untuk memberi aksen hangat di ruang keluarga atau kamar tidur. Motifnya sederhana dan mudah dipadukan dengan furniture lain.",
+      "excerpt": "Karpet lembut untuk aksen ruang.",
+      "price": 649000,
+      "tags": ["rug", "decor", "living room"],
+      "thumbnail": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+      "images": ["https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Shoe Cabinet",
+      "slug": "vkea-shoe-cabinet",
+      "description": "Kabinet sepatu ramping untuk area masuk rumah. Membantu menyimpan sepatu agar ruangan terlihat bersih dan tertata.",
+      "excerpt": "Kabinet sepatu ramping untuk area masuk.",
+      "price": 999000,
+      "tags": ["cabinet", "entryway", "storage"],
+      "thumbnail": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
+      "images": ["https://images.unsplash.com/photo-1616486338812-3dadae4b4ace"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Kitchen Cart",
+      "slug": "vkea-kitchen-cart",
+      "description": "Troli dapur serbaguna dengan roda untuk menyimpan peralatan masak, bumbu, atau perlengkapan makan. Mudah dipindahkan sesuai kebutuhan.",
+      "excerpt": "Troli dapur serbaguna dengan roda.",
+      "price": 799000,
+      "tags": ["kitchen", "cart", "storage"],
+      "thumbnail": "https://images.unsplash.com/photo-1556911220-bff31c812dba",
+      "images": ["https://images.unsplash.com/photo-1556911220-bff31c812dba"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Mirror Cabinet",
+      "slug": "vkea-mirror-cabinet",
+      "description": "Kabinet cermin untuk kamar mandi atau kamar tidur. Bagian dalamnya bisa digunakan untuk menyimpan perlengkapan kecil agar tetap rapi.",
+      "excerpt": "Kabinet cermin dengan ruang penyimpanan.",
+      "price": 899000,
+      "tags": ["mirror", "cabinet", "storage"],
+      "thumbnail": "https://images.unsplash.com/photo-1600566752355-35792bedcfea",
+      "images": ["https://images.unsplash.com/photo-1600566752355-35792bedcfea"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
     }
   ]
 }
