@@ -37,6 +37,90 @@
       "images": ["https://images.unsplash.com/photo-1594026112284-02bb6f3352fe"],
       "createdAt": "2026-04-17T00:00:00.000Z",
       "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Dining Table",
+      "slug": "vkea-dining-table",
+      "description": "Meja makan kayu dengan ukuran nyaman untuk keluarga kecil. Desainnya sederhana dan mudah dipadukan dengan kursi makan berbagai warna.",
+      "excerpt": "Meja makan kayu untuk keluarga kecil.",
+      "price": 2199000,
+      "tags": ["table", "dining room", "wood"],
+      "thumbnail": "https://images.unsplash.com/photo-1577140917170-285929fb55b7",
+      "images": ["https://images.unsplash.com/photo-1577140917170-285929fb55b7"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Bookshelf",
+      "slug": "vkea-bookshelf",
+      "description": "Rak buku terbuka untuk menyimpan buku, tanaman kecil, dan dekorasi. Cocok untuk ruang kerja, ruang keluarga, atau sudut baca.",
+      "excerpt": "Rak buku terbuka untuk buku dan dekorasi.",
+      "price": 749000,
+      "tags": ["shelf", "storage", "decor"],
+      "thumbnail": "https://images.unsplash.com/photo-1594620302200-9a762244a156",
+      "images": ["https://images.unsplash.com/photo-1594620302200-9a762244a156"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Floor Lamp",
+      "slug": "vkea-floor-lamp",
+      "description": "Lampu lantai dengan cahaya hangat untuk sudut baca dan ruang tamu. Bentuknya ramping sehingga tidak memakan banyak ruang.",
+      "excerpt": "Lampu lantai hangat untuk sudut baca.",
+      "price": 499000,
+      "tags": ["lamp", "lighting", "living room"],
+      "thumbnail": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c",
+      "images": ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Sofa Bed",
+      "slug": "vkea-sofa-bed",
+      "description": "Sofa multifungsi yang bisa digunakan untuk duduk santai atau tempat tidur tamu. Pilihan praktis untuk apartemen dan ruang keluarga kecil.",
+      "excerpt": "Sofa multifungsi untuk ruang keluarga.",
+      "price": 3299000,
+      "tags": ["sofa", "living room", "multifunction"],
+      "thumbnail": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc",
+      "images": ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Bed Frame",
+      "slug": "vkea-bed-frame",
+      "description": "Rangka tempat tidur minimalis dengan material kuat untuk kamar tidur modern. Bagian bawahnya memberi ruang agar kamar terasa lebih lapang.",
+      "excerpt": "Rangka tempat tidur minimalis dan kuat.",
+      "price": 2499000,
+      "tags": ["bed", "bedroom", "wood"],
+      "thumbnail": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+      "images": ["https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Wardrobe",
+      "slug": "vkea-wardrobe",
+      "description": "Lemari pakaian dua pintu dengan ruang penyimpanan yang mudah diatur. Cocok untuk pakaian harian, tas, dan perlengkapan kamar.",
+      "excerpt": "Lemari pakaian dua pintu untuk kamar.",
+      "price": 2799000,
+      "tags": ["wardrobe", "bedroom", "storage"],
+      "thumbnail": "https://images.unsplash.com/photo-1556020685-ae41abfc9365",
+      "images": ["https://images.unsplash.com/photo-1556020685-ae41abfc9365"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
+    },
+    {
+      "name": "VKEA Coffee Table",
+      "slug": "vkea-coffee-table",
+      "description": "Meja kopi rendah untuk ruang tamu dengan permukaan luas dan desain bersih. Cocok diletakkan di depan sofa untuk buku, minuman, dan dekorasi.",
+      "excerpt": "Meja kopi rendah untuk ruang tamu.",
+      "price": 699000,
+      "tags": ["table", "living room", "coffee table"],
+      "thumbnail": "https://images.unsplash.com/photo-1532372320572-cda25653a694",
+      "images": ["https://images.unsplash.com/photo-1532372320572-cda25653a694"],
+      "createdAt": "2026-04-17T00:00:00.000Z",
+      "updatedAt": "2026-04-17T00:00:00.000Z"
     }
   ]
 }
