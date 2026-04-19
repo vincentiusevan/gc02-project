@@ -1,10 +1,20 @@
 import { IProduct } from '@/types/product';
 import { getDB } from '../config/mongodb';
+import { WithId } from 'mongodb';
 
 export default class Product {
   static getCollection() {
     const collection = getDB().collection<IProduct>('products');
     return collection;
+  }
+
+  static formatProduct(product: WithId<IProduct>): IProduct {
+    return {
+      ...product,
+      _id: product._id.toString(),
+      createdAt: new Date(product.createdAt).toISOString(),
+      updatedAt: new Date(product.updatedAt).toISOString(),
+    };
   }
 
   static async getProducts(search?: string, page?: string) {
@@ -25,7 +35,9 @@ export default class Product {
 
     const products = await collection.find(query).skip(skip).limit(limit).toArray();
 
-    return products;
+    return products.map((product) => {
+      return this.formatProduct(product);
+    });
   }
 
   static async getProductBySlug(slug: string) {
@@ -33,6 +45,8 @@ export default class Product {
 
     const product = await collection.findOne({ slug });
 
-    return product;
+    if (!product) return null;
+
+    return this.formatProduct(product);
   }
 }

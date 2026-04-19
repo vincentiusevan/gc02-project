@@ -1,7 +1,9 @@
 import Image from 'next/image';
-import { products } from '@/data/product';
 import { Metadata } from 'next';
 import AddWishlistButton from '@/components/AddWishlistButton';
+import Product from '@/server/models/Product';
+
+export const dynamic = 'force-dynamic';
 
 interface IProps {
   params: Promise<{ slug: string }>;
@@ -9,7 +11,7 @@ interface IProps {
 
 export async function generateMetadata(props: IProps): Promise<Metadata> {
   const { slug } = await props.params;
-  const product = products.find((item) => item.slug === slug);
+  const product = await Product.getProductBySlug(slug);
 
   if (!product) {
     return {
@@ -31,7 +33,7 @@ export async function generateMetadata(props: IProps): Promise<Metadata> {
 
 export default async function ProductDetailPage(props: IProps) {
   const { slug } = await props.params;
-  const product = products.find((item) => item.slug === slug);
+  const product = await Product.getProductBySlug(slug);
 
   if (!product) {
     return (

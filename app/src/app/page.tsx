@@ -1,8 +1,12 @@
 import ProductCard from '@/components/ProductCard';
 import Link from 'next/link';
-import { products } from '@/data/product';
+import Product from '@/server/models/Product';
 
-export default function Home() {
+export const dynamic = 'force-dynamic';
+
+export default async function Home() {
+  const products = await Product.getProducts();
+
   return (
     <div className="space-y-10">
       <section className="rounded-lg border border-gray-700 bg-zinc-900 px-8 py-12">

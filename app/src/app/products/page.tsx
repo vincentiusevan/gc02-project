@@ -1,7 +1,11 @@
 import ProductList from '@/components/ProductList';
-import { products } from '@/data/product';
+import Product from '@/server/models/Product';
 
-export default function ProductsPage() {
+export const dynamic = 'force-dynamic';
+
+export default async function ProductsPage() {
+  const products = await Product.getProducts();
+
   return (
     <div>
       <h1 className="text-3xl font-bold">Products</h1>
