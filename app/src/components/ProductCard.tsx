@@ -30,9 +30,9 @@ export default function ProductCard(props: IProps) {
         Detail
       </Link>
       {showRemoveButton ? (
-        <RemoveWishlistButton productSlug={product.slug} />
+        <RemoveWishlistButton productId={product._id} />
       ) : (
-        <AddWishlistButton productSlug={product.slug} />
+        <AddWishlistButton productId={product._id} />
       )}
     </div>
   );

@@ -1,12 +1,29 @@
 'use client';
 
 interface IProps {
-  productSlug: string;
+  productId?: string;
 }
 
 export default function RemoveWishlistButton(props: IProps) {
-  const handleRemoveWishlist = () => {
-    console.log('remove wishlist', props.productSlug);
+  const handleRemoveWishlist = async () => {
+    if (!props.productId) {
+      alert('Product belum memiliki id');
+      return;
+    }
+
+    const resp = await fetch('/api/wishlist', {
+      method: 'DELETE',
+      body: JSON.stringify({
+        userId: '000000000000000000000001',
+        productId: props.productId,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await resp.json();
+    alert(data.message);
   };
 
   return (

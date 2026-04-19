@@ -1,12 +1,29 @@
 'use client';
 
 interface IProps {
-  productSlug: string;
+  productId?: string;
 }
 
 export default function AddWishlistButton(props: IProps) {
-  const handleAddWishlist = () => {
-    console.log('add wishlist', props.productSlug);
+  const handleAddWishlist = async () => {
+    if (!props.productId) {
+      alert('Product belum memiliki id');
+      return;
+    }
+
+    const resp = await fetch('/api/wishlist', {
+      method: 'POST',
+      body: JSON.stringify({
+        userId: '000000000000000000000001',
+        productId: props.productId,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await resp.json();
+    alert(data.message);
   };
 
   return (

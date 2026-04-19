@@ -58,7 +58,7 @@ export default async function ProductDetailPage(props: IProps) {
         <p className="mt-4 text-gray-600">{product.description}</p>
         <p className="mt-4 text-2xl font-bold">Rp {product.price.toLocaleString('id-ID')}</p>
 
-        <AddWishlistButton productSlug={product.slug} />
+        <AddWishlistButton productId={product._id} />
       </div>
     </div>
   );
