@@ -1,8 +1,31 @@
 import Image from 'next/image';
 import { products } from '@/data/product';
+import { Metadata } from 'next';
 
 interface IProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata(props: IProps): Promise<Metadata> {
+  const { slug } = await props.params;
+  const product = products.find((item) => item.slug === slug);
+
+  if (!product) {
+    return {
+      title: 'Product Not Found | VKEA',
+      description: 'Product tidak ditemukan.',
+    };
+  }
+
+  return {
+    title: `${product.name} | VKEA`,
+    description: product.excerpt,
+    openGraph: {
+      title: `${product.name} | VKEA`,
+      description: product.excerpt,
+      images: [product.thumbnail],
+    },
+  };
 }
 
 export default async function ProductDetailPage(props: IProps) {
