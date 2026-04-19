@@ -16,8 +16,13 @@ export default async function WishlistPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold">Wishlist</h1>
-      <p className="mt-2 text-gray-600">Produk favorit yang kamu simpan.</p>
+      <section className="rounded-md bg-white p-8">
+        <p className="font-bold uppercase tracking-wide text-blue-700">Saved items</p>
+        <h1 className="mt-3 text-4xl font-black">Wishlist</h1>
+        <p className="mt-3 max-w-2xl text-lg leading-8 text-neutral-600">
+          Produk favorit yang kamu simpan.
+        </p>
+      </section>
 
       {wishlistProducts.length > 0 ? (
         <WishlistList products={wishlistProducts} />

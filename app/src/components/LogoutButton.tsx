@@ -15,7 +15,7 @@ export default function LogoutButton() {
   };
 
   return (
-    <button onClick={handleLogout} className="cursor-pointer">
+    <button onClick={handleLogout} className="cursor-pointer font-semibold hover:text-blue-700">
       Logout
     </button>
   );

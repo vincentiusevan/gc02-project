@@ -44,19 +44,37 @@ export default async function ProductDetailPage(props: IProps) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-8">
-      <Image
-        src={product.thumbnail}
-        alt={product.name}
-        width={600}
-        height={600}
-        className="w-full object-cover"
-      />
+    <div className="grid gap-8 md:grid-cols-2">
+      <div className="space-y-4">
+        <Image
+          src={product.thumbnail}
+          alt={product.name}
+          width={700}
+          height={700}
+          className="h-[520px] w-full rounded-md object-cover"
+        />
 
-      <div>
-        <h1 className="text-3xl font-bold">{product.name}</h1>
-        <p className="mt-4 text-gray-600">{product.description}</p>
-        <p className="mt-4 text-2xl font-bold">Rp {product.price.toLocaleString('id-ID')}</p>
+        <div className="grid grid-cols-3 gap-4">
+          {product.images.map((image) => {
+            return (
+              <Image
+                key={image}
+                src={image}
+                alt={product.name}
+                width={220}
+                height={220}
+                className="h-36 w-full rounded-md object-cover"
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="rounded-md bg-white p-8">
+        <p className="font-bold uppercase tracking-wide text-blue-700">{product.tags.join(' / ')}</p>
+        <h1 className="mt-3 text-4xl font-black">{product.name}</h1>
+        <p className="mt-5 leading-8 text-neutral-600">{product.description}</p>
+        <p className="mt-6 text-3xl font-black">Rp {product.price.toLocaleString('id-ID')}</p>
 
         <AddWishlistButton productId={product._id} />
       </div>

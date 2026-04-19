@@ -40,7 +40,7 @@ export default function RemoveWishlistButton(props: IProps) {
   return (
     <button
       onClick={handleRemoveWishlist}
-      className="mt-3 block w-full bg-red-600 px-4 py-2 font-semibold text-white"
+      className="mt-4 block w-full rounded-md bg-red-600 px-4 py-3 font-semibold text-white hover:bg-red-700"
     >
       Remove Wishlist
     </button>

@@ -32,34 +32,53 @@ export default async function RegisterPage(props: IProps) {
   }
 
   return (
-    <div className="mx-auto max-w-md">
-      <h1 className="text-3xl font-bold">Register</h1>
-      <p className="mt-2 text-gray-600">Buat akun untuk menyimpan wishlist kamu.</p>
+    <div className="mx-auto max-w-md rounded-md bg-white p-8 shadow-sm">
+      <p className="font-bold uppercase tracking-wide text-blue-700">Create account</p>
+      <h1 className="mt-3 text-4xl font-black">Register</h1>
+      <p className="mt-3 leading-7 text-neutral-600">Buat akun untuk menyimpan wishlist kamu.</p>
 
       {error && <p className="mt-4 text-red-500">{error}</p>}
 
       <form action={register} className="mt-6 space-y-4">
         <div>
           <label className="block font-medium">Name</label>
-          <input name="name" className="mt-1 w-full border px-3 py-2" type="text" />
+          <input
+            name="name"
+            className="mt-1 w-full rounded-md border border-neutral-300 px-4 py-3 outline-none focus:border-blue-700"
+            type="text"
+          />
         </div>
 
         <div>
           <label className="block font-medium">Username</label>
-          <input name="username" className="mt-1 w-full border px-3 py-2" type="text" />
+          <input
+            name="username"
+            className="mt-1 w-full rounded-md border border-neutral-300 px-4 py-3 outline-none focus:border-blue-700"
+            type="text"
+          />
         </div>
 
         <div>
           <label className="block font-medium">Email</label>
-          <input name="email" className="mt-1 w-full border px-3 py-2" type="email" />
+          <input
+            name="email"
+            className="mt-1 w-full rounded-md border border-neutral-300 px-4 py-3 outline-none focus:border-blue-700"
+            type="email"
+          />
         </div>
 
         <div>
           <label className="block font-medium">Password</label>
-          <input name="password" className="mt-1 w-full border px-3 py-2" type="password" />
+          <input
+            name="password"
+            className="mt-1 w-full rounded-md border border-neutral-300 px-4 py-3 outline-none focus:border-blue-700"
+            type="password"
+          />
         </div>
 
-        <button className="w-full bg-blue-700 px-4 py-2 font-semibold text-white">Register</button>
+        <button className="w-full rounded-md bg-blue-700 px-4 py-3 font-semibold text-white hover:bg-blue-800">
+          Register
+        </button>
       </form>
     </div>
   );

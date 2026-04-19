@@ -42,7 +42,7 @@ export default function ProductList(props: IProps) {
     <div>
       <SearchProduct onSearch={setSearch} />
 
-      <div className="mt-6 grid grid-cols-3 gap-6">
+      <div className="mt-8 grid gap-6 md:grid-cols-3">
         {products.map((product) => {
           return <ProductCard key={product.slug} product={product} />;
         })}

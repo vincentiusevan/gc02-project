@@ -8,8 +8,13 @@ export default async function ProductsPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold">Products</h1>
-      <p className="mt-2 text-gray-600">Temukan furniture yang cocok untuk rumah kamu.</p>
+      <section className="rounded-md bg-white p-8">
+        <p className="font-bold uppercase tracking-wide text-blue-700">Shop furniture</p>
+        <h1 className="mt-3 text-4xl font-black">Products</h1>
+        <p className="mt-3 max-w-2xl text-lg leading-8 text-neutral-600">
+          Temukan furniture yang cocok untuk rumah kamu.
+        </p>
+      </section>
 
       <ProductList products={products} />
     </div>

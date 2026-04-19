@@ -39,7 +39,7 @@ export default function AddWishlistButton(props: IProps) {
   return (
     <button
       onClick={handleAddWishlist}
-      className="mt-3 block w-full bg-blue-700 px-4 py-2 font-semibold text-white"
+      className="mt-4 block w-full rounded-md bg-blue-700 px-4 py-3 font-semibold text-white hover:bg-blue-800"
     >
       Add to Wishlist
     </button>
