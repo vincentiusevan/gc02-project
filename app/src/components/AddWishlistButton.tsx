@@ -1,10 +1,14 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 interface IProps {
   productId?: string;
 }
 
 export default function AddWishlistButton(props: IProps) {
+  const router = useRouter();
+
   const handleAddWishlist = async () => {
     if (!props.productId) {
       alert('Product belum memiliki id');
@@ -14,7 +18,6 @@ export default function AddWishlistButton(props: IProps) {
     const resp = await fetch('/api/wishlist', {
       method: 'POST',
       body: JSON.stringify({
-        userId: '000000000000000000000001',
         productId: props.productId,
       }),
       headers: {
@@ -23,6 +26,13 @@ export default function AddWishlistButton(props: IProps) {
     });
 
     const data = await resp.json();
+
+    if (resp.status === 401) {
+      alert(data.message);
+      router.push('/login');
+      return;
+    }
+
     alert(data.message);
   };
 

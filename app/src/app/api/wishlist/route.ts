@@ -1,61 +1,54 @@
 import Wishlist from '@/server/models/Wishlist';
-import { ZodError } from 'zod';
+import { errorHandler } from '@/server/helpers/errorHandler';
+import { UnauthorizedError } from '@/server/helpers/CustomError';
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const userId = searchParams.get('userId');
+  try {
+    const userId = request.headers.get('x-user-id');
 
-  if (!userId) {
-    return Response.json({ message: 'userId is required' }, { status: 400 });
+    if (!userId) throw new UnauthorizedError('Silakan login terlebih dahulu');
+
+    const wishlists = await Wishlist.getWishlists(userId);
+
+    return Response.json(wishlists, { status: 200 });
+  } catch (err: unknown) {
+    const { message, status } = errorHandler(err);
+    return Response.json({ message }, { status });
   }
-
-  const wishlists = await Wishlist.getWishlists(userId);
-
-  return Response.json(wishlists, { status: 200 });
 }
 
 export async function POST(request: Request) {
   try {
+    const userId = request.headers.get('x-user-id');
+    if (!userId) throw new UnauthorizedError('Silakan login terlebih dahulu');
+
     const body = await request.json();
-    const message = await Wishlist.addWishlist(body);
+    const message = await Wishlist.addWishlist({
+      userId,
+      productId: body.productId,
+    });
 
     return Response.json({ message }, { status: 201 });
   } catch (err: unknown) {
-    if (err instanceof ZodError) {
-      const messages = err.issues.map((issue) => {
-        return `${issue.path} - ${issue.message}`;
-      });
-
-      return Response.json({ message: messages.join('; ') }, { status: 400 });
-    }
-
-    if (err instanceof Error) {
-      return Response.json({ message: err.message }, { status: 400 });
-    }
-
-    return Response.json({ message: 'ISE' }, { status: 500 });
+    const { message, status } = errorHandler(err);
+    return Response.json({ message }, { status });
   }
 }
 
 export async function DELETE(request: Request) {
   try {
+    const userId = request.headers.get('x-user-id');
+    if (!userId) throw new UnauthorizedError('Silakan login terlebih dahulu');
+
     const body = await request.json();
-    const message = await Wishlist.removeWishlist(body);
+    const message = await Wishlist.removeWishlist({
+      userId,
+      productId: body.productId,
+    });
 
     return Response.json({ message }, { status: 200 });
   } catch (err: unknown) {
-    if (err instanceof ZodError) {
-      const messages = err.issues.map((issue) => {
-        return `${issue.path} - ${issue.message}`;
-      });
-
-      return Response.json({ message: messages.join('; ') }, { status: 400 });
-    }
-
-    if (err instanceof Error) {
-      return Response.json({ message: err.message }, { status: 400 });
-    }
-
-    return Response.json({ message: 'ISE' }, { status: 500 });
+    const { message, status } = errorHandler(err);
+    return Response.json({ message }, { status });
   }
 }

@@ -1,7 +1,10 @@
 import { IUser } from '@/types/user';
 import { getDB } from '../config/mongodb';
 import { comparePassword, hashPassword } from '../helpers/bcrypt';
+import { ObjectId } from 'mongodb';
 import z from 'zod';
+import { UnauthorizedError } from '../helpers/CustomError';
+import { signToken } from '../helpers/jwt';
 
 const userSchema = z.object({
   name: z.string().trim(),
@@ -19,6 +22,16 @@ export default class User {
   static getCollection() {
     const collection = getDB().collection<IUser>('users');
     return collection;
+  }
+
+  static async getUserById(id: string) {
+    const collection = this.getCollection();
+
+    const user = await collection.findOne({
+      _id: new ObjectId(id),
+    });
+
+    return user;
   }
 
   static async register(body: IUser): Promise<string> {
@@ -50,14 +63,17 @@ export default class User {
 
     const user = await collection.findOne({ email: body.email });
     if (!user) {
-      throw new Error('Invalid email/password');
+      throw new UnauthorizedError('Invalid email/password');
     }
 
     const isValidPassword = comparePassword(body.password, user.password);
     if (!isValidPassword) {
-      throw new Error('Invalid email/password');
+      throw new UnauthorizedError('Invalid email/password');
     }
 
-    return 'login berhasil';
+    return signToken({
+      _id: user._id.toString(),
+      email: user.email,
+    });
   }
 }

@@ -18,7 +18,6 @@ export default function RemoveWishlistButton(props: IProps) {
     const resp = await fetch('/api/wishlist', {
       method: 'DELETE',
       body: JSON.stringify({
-        userId: '000000000000000000000001',
         productId: props.productId,
       }),
       headers: {
@@ -27,6 +26,13 @@ export default function RemoveWishlistButton(props: IProps) {
     });
 
     const data = await resp.json();
+
+    if (resp.status === 401) {
+      alert(data.message);
+      router.push('/login');
+      return;
+    }
+
     alert(data.message);
     router.refresh();
   };

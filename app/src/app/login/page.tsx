@@ -1,19 +1,20 @@
-import { redirect } from 'next/navigation';
+'use client';
 
-interface IProps {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
-export default async function LoginPage(props: IProps) {
-  const { error } = await props.searchParams;
+export default function LoginPage() {
+  const router = useRouter();
+  const [error, setError] = useState('');
 
-  async function login(formData: FormData) {
-    'use server';
+  const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
+    const formData = new FormData(event.currentTarget);
     const email = formData.get('email');
     const password = formData.get('password');
 
-    const resp = await fetch('http://localhost:3000/api/login', {
+    const resp = await fetch('/api/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
       headers: {
@@ -21,13 +22,16 @@ export default async function LoginPage(props: IProps) {
       },
     });
 
+    const data = await resp.json();
+
     if (!resp.ok) {
-      const data = await resp.json();
-      redirect(`/login?error=${data.message}`);
+      setError(data.message);
+      return;
     }
 
-    redirect('/products');
-  }
+    router.push('/products');
+    router.refresh();
+  };
 
   return (
     <div className="mx-auto max-w-md">
@@ -36,7 +40,7 @@ export default async function LoginPage(props: IProps) {
 
       {error && <p className="mt-4 text-red-500">{error}</p>}
 
-      <form action={login} className="mt-6 space-y-4">
+      <form onSubmit={handleLogin} className="mt-6 space-y-4">
         <div>
           <label className="block font-medium">Email</label>
           <input name="email" className="mt-1 w-full border px-3 py-2" type="email" />

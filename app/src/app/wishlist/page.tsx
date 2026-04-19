@@ -1,12 +1,18 @@
 import WishlistList from '@/components/WishlistList';
+import { getUserLogin } from '@/server/helpers/auth';
 import Wishlist from '@/server/models/Wishlist';
+import { redirect } from 'next/navigation';
 
 export const dynamic = 'force-dynamic';
 
-const userId = '000000000000000000000001';
-
 export default async function WishlistPage() {
-  const wishlistProducts = await Wishlist.getWishlistProducts(userId);
+  const user = await getUserLogin();
+
+  if (!user) {
+    redirect('/login');
+  }
+
+  const wishlistProducts = await Wishlist.getWishlistProducts(user._id.toString());
 
   return (
     <div>
