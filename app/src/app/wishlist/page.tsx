@@ -16,9 +16,9 @@ export default async function WishlistPage() {
 
   return (
     <div>
-      <section className="rounded-md bg-white p-8">
+      <section className="rounded-md bg-white p-7 sm:p-8">
         <p className="font-bold uppercase tracking-wide text-blue-700">Saved items</p>
-        <h1 className="mt-3 text-4xl font-black">Wishlist</h1>
+        <h1 className="mt-3 text-3xl font-black sm:text-4xl">Wishlist</h1>
         <p className="mt-3 max-w-2xl text-lg leading-8 text-neutral-600">
           Produk favorit yang kamu simpan.
         </p>

@@ -61,10 +61,21 @@ export default class Wishlist {
     wishlistSchema.parse(body);
 
     const collection = this.getCollection();
+    const userId = new ObjectId(body.userId);
+    const productId = new ObjectId(body.productId);
+
+    const wishlist = await collection.findOne({
+      userId,
+      productId,
+    });
+
+    if (wishlist) {
+      return 'product sudah ada di wishlist';
+    }
 
     await collection.insertOne({
-      userId: new ObjectId(body.userId),
-      productId: new ObjectId(body.productId),
+      userId,
+      productId,
       createdAt: new Date(),
       updatedAt: new Date(),
     });

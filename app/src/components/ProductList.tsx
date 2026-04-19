@@ -14,6 +14,7 @@ export default function ProductList(props: IProps) {
   const [products, setProducts] = useState<IProduct[]>(props.products);
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(props.products.length === 10);
 
   useEffect(() => {
     const timeout = setTimeout(async () => {
@@ -22,6 +23,7 @@ export default function ProductList(props: IProps) {
 
       setProducts(data);
       setPage(1);
+      setHasMore(data.length === 10);
     }, 500);
 
     return () => {
@@ -36,19 +38,27 @@ export default function ProductList(props: IProps) {
 
     setProducts([...products, ...data]);
     setPage(nextPage);
+    setHasMore(data.length === 10);
   };
 
   return (
     <div>
       <SearchProduct onSearch={setSearch} />
 
-      <div className="mt-8 grid gap-6 md:grid-cols-3">
-        {products.map((product) => {
-          return <ProductCard key={product.slug} product={product} />;
-        })}
-      </div>
+      {products.length > 0 ? (
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((product) => {
+            return <ProductCard key={product.slug} product={product} />;
+          })}
+        </div>
+      ) : (
+        <div className="mt-8 rounded-md bg-white p-10 text-center">
+          <h2 className="text-2xl font-black">Produk tidak ditemukan</h2>
+          <p className="mt-3 text-neutral-600">Coba gunakan kata kunci lain untuk mencari produk.</p>
+        </div>
+      )}
 
-      <PaginationProduct onLoadMore={handleLoadMore} />
+      {hasMore && <PaginationProduct onLoadMore={handleLoadMore} />}
     </div>
   );
 }

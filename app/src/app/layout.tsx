@@ -18,8 +18,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'VKEA Home Living',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
+  title: {
+    default: 'VKEA Home Living',
+    template: '%s | VKEA',
+  },
   description: 'Furniture sederhana untuk rumah yang nyaman.',
+  openGraph: {
+    title: 'VKEA Home Living',
+    description: 'Furniture sederhana untuk rumah yang nyaman.',
+    siteName: 'VKEA',
+    images: ['/images/vkea-logo.png'],
+  },
 };
 
 export default async function RootLayout({
@@ -33,19 +43,19 @@ export default async function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-[#f7f7f2] text-neutral-950">
         <nav className="sticky top-0 z-30 border-b border-neutral-200 bg-white/95 backdrop-blur">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+          <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/vkea-logo.png"
+                src="/images/vkea-logo.svg"
                 alt="VKEA"
-                width={192}
-                height={80}
-                className="h-20 w-48 rounded-md object-cover"
+                width={220}
+                height={88}
+                className="h-16 w-40 sm:h-20 sm:w-52"
                 priority
               />
             </Link>
 
-            <div className="flex items-center gap-6 text-base font-bold">
+            <div className="flex flex-wrap items-center gap-4 text-sm font-bold sm:gap-6 sm:text-base">
               <Link href="/" className="hover:text-blue-700">
                 Home
               </Link>
@@ -74,7 +84,7 @@ export default async function RootLayout({
           </div>
 
           <div className="border-t border-neutral-100">
-            <div className="mx-auto flex max-w-7xl gap-8 overflow-x-auto px-6 py-3 text-sm font-semibold text-neutral-600">
+            <div className="mx-auto flex max-w-7xl gap-8 overflow-x-auto px-4 py-3 text-sm font-semibold text-neutral-600 sm:px-6">
               <Link href="/products" className="whitespace-nowrap hover:text-blue-700">
                 Ruang tamu
               </Link>

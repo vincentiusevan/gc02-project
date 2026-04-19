@@ -13,7 +13,7 @@ export default function ProductCard(props: IProps) {
   const { product, showRemoveButton } = props;
 
   return (
-    <div className="group overflow-hidden rounded-md border border-neutral-200 bg-white shadow-sm">
+    <div className="group flex h-full flex-col overflow-hidden rounded-md border border-neutral-200 bg-white shadow-sm">
       <Link href={`/products/${product.slug}`}>
         <Image
           src={product.thumbnail}
@@ -24,7 +24,7 @@ export default function ProductCard(props: IProps) {
         />
       </Link>
 
-      <div className="p-5">
+      <div className="flex flex-1 flex-col p-5">
         <p className="text-xs font-bold uppercase tracking-wide text-blue-700">{product.tags[0]}</p>
         <h3 className="mt-2 text-lg font-bold">{product.name}</h3>
         <p className="mt-2 min-h-10 text-sm leading-6 text-neutral-600">{product.excerpt}</p>
@@ -36,11 +36,13 @@ export default function ProductCard(props: IProps) {
         >
           Detail
         </Link>
+        <div className="mt-auto">
         {showRemoveButton ? (
           <RemoveWishlistButton productId={product._id} />
         ) : (
           <AddWishlistButton productId={product._id} />
         )}
+        </div>
       </div>
     </div>
   );

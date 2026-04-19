@@ -44,17 +44,17 @@ export default async function ProductDetailPage(props: IProps) {
   }
 
   return (
-    <div className="grid gap-8 md:grid-cols-2">
+    <div className="grid gap-8 lg:grid-cols-2">
       <div className="space-y-4">
         <Image
           src={product.thumbnail}
           alt={product.name}
           width={700}
           height={700}
-          className="h-[520px] w-full rounded-md object-cover"
+          className="h-80 w-full rounded-md object-cover sm:h-[520px]"
         />
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-3 sm:gap-4">
           {product.images.map((image) => {
             return (
               <Image
@@ -63,16 +63,16 @@ export default async function ProductDetailPage(props: IProps) {
                 alt={product.name}
                 width={220}
                 height={220}
-                className="h-36 w-full rounded-md object-cover"
+                className="h-24 w-full rounded-md object-cover sm:h-36"
               />
             );
           })}
         </div>
       </div>
 
-      <div className="rounded-md bg-white p-8">
+      <div className="rounded-md bg-white p-7 sm:p-8">
         <p className="font-bold uppercase tracking-wide text-blue-700">{product.tags.join(' / ')}</p>
-        <h1 className="mt-3 text-4xl font-black">{product.name}</h1>
+        <h1 className="mt-3 text-3xl font-black sm:text-4xl">{product.name}</h1>
         <p className="mt-5 leading-8 text-neutral-600">{product.description}</p>
         <p className="mt-6 text-3xl font-black">Rp {product.price.toLocaleString('id-ID')}</p>
 
