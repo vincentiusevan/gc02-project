@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { IProduct } from '@/types/product';
+import AddWishlistButton from './AddWishlistButton';
+import RemoveWishlistButton from './RemoveWishlistButton';
 
 interface IProps {
   product: IProduct;
@@ -28,13 +30,9 @@ export default function ProductCard(props: IProps) {
         Detail
       </Link>
       {showRemoveButton ? (
-        <button className="mt-3 block w-full bg-red-600 px-4 py-2 font-semibold text-white">
-          Remove Wishlist
-        </button>
+        <RemoveWishlistButton productSlug={product.slug} />
       ) : (
-        <button className="mt-3 block w-full bg-blue-700 px-4 py-2 font-semibold text-white">
-          Add to Wishlist
-        </button>
+        <AddWishlistButton productSlug={product.slug} />
       )}
     </div>
   );
