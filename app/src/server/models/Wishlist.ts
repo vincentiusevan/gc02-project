@@ -1,7 +1,9 @@
 import { IWishlist } from '@/types/wishlist';
 import { getDB } from '../config/mongodb';
-import { ObjectId } from 'mongodb';
+import { ObjectId, WithId } from 'mongodb';
 import z from 'zod';
+import { IProduct } from '@/types/product';
+import Product from './Product';
 
 const wishlistSchema = z.object({
   userId: z.string().trim().min(1),
@@ -24,6 +26,35 @@ export default class Wishlist {
       .toArray();
 
     return wishlists;
+  }
+
+  static async getWishlistProducts(userId: string) {
+    const collection = this.getCollection();
+
+    const wishlists = await collection
+      .aggregate<{ product: WithId<IProduct> }>([
+        {
+          $match: {
+            userId: new ObjectId(userId),
+          },
+        },
+        {
+          $lookup: {
+            from: 'products',
+            localField: 'productId',
+            foreignField: '_id',
+            as: 'product',
+          },
+        },
+        {
+          $unwind: '$product',
+        },
+      ])
+      .toArray();
+
+    return wishlists.map((wishlist) => {
+      return Product.formatProduct(wishlist.product);
+    });
   }
 
   static async addWishlist(body: { userId: string; productId: string }): Promise<string> {

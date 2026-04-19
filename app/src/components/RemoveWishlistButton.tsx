@@ -1,10 +1,14 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 interface IProps {
   productId?: string;
 }
 
 export default function RemoveWishlistButton(props: IProps) {
+  const router = useRouter();
+
   const handleRemoveWishlist = async () => {
     if (!props.productId) {
       alert('Product belum memiliki id');
@@ -24,6 +28,7 @@ export default function RemoveWishlistButton(props: IProps) {
 
     const data = await resp.json();
     alert(data.message);
+    router.refresh();
   };
 
   return (
