@@ -1,6 +1,6 @@
 import { IUser } from '@/types/user';
 import { getDB } from '../config/mongodb';
-import { hashPassword } from '../helpers/bcrypt';
+import { comparePassword, hashPassword } from '../helpers/bcrypt';
 import z from 'zod';
 
 const userSchema = z.object({
@@ -8,6 +8,11 @@ const userSchema = z.object({
   username: z.string().trim().min(1),
   email: z.email().trim(),
   password: z.string().trim().min(5),
+});
+
+const loginSchema = z.object({
+  email: z.email().trim(),
+  password: z.string().trim().min(1),
 });
 
 export default class User {
@@ -36,5 +41,23 @@ export default class User {
     await collection.insertOne(body);
 
     return 'register berhasil';
+  }
+
+  static async login(body: Pick<IUser, 'email' | 'password'>): Promise<string> {
+    loginSchema.parse(body);
+
+    const collection = this.getCollection();
+
+    const user = await collection.findOne({ email: body.email });
+    if (!user) {
+      throw new Error('Invalid email/password');
+    }
+
+    const isValidPassword = comparePassword(body.password, user.password);
+    if (!isValidPassword) {
+      throw new Error('Invalid email/password');
+    }
+
+    return 'login berhasil';
   }
 }
