@@ -33,15 +33,14 @@ export default async function RootLayout({
       <body className="flex min-h-full flex-col bg-[#f7f7f2] text-neutral-950">
         <nav className="sticky top-0 z-30 border-b border-neutral-200 bg-white/95 px-6 py-4 backdrop-blur">
           <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center">
             <Image
               src="/images/vkea-logo.png"
               alt="VKEA"
-              width={44}
-              height={44}
-              className="h-11 w-11 rounded-md object-cover"
+              width={112}
+              height={56}
+              className="h-14 w-28 rounded-md object-contain"
             />
-            <span className="text-2xl font-black tracking-wide">VKEA</span>
           </Link>
 
           <div className="flex items-center gap-6 text-sm font-semibold">
