@@ -48,9 +48,9 @@ export default async function RootLayout({
               <Image
                 src="/images/vkea-logo.svg"
                 alt="VKEA"
-                width={220}
-                height={88}
-                className="h-16 w-40 sm:h-20 sm:w-52"
+                width={260}
+                height={96}
+                className="h-16 w-44 sm:h-20 sm:w-56"
                 priority
               />
             </Link>
